@@ -60,6 +60,14 @@ a {
 	text-align: center;
 	top: 0;
 
+	@media screen and (min-width: 500px) {
+		zoom: 1.7;
+	}
+
+	@media screen and (min-width: 300px) {
+		zoom: 1.4;
+	}
+
 	.author__name, .author__bio{
 		margin: 0 0 0.5em 0;
 	}
@@ -134,7 +142,3 @@ a {
 		}
 	}
 }
-
-@media screen and (max-width: 320px) {
-    zoom: 1.7;
-  }
