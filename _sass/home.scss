@@ -61,11 +61,7 @@ a {
 	top: 0;
 
 	@media screen and (max-width: 500px) {
-		zoom: 1.6;
-	}
-
-	@media screen and (max-width: 300px) {
-		zoom: 1.4;
+		zoom: 1.2;
 	}
 
 	.author__name, .author__bio{
