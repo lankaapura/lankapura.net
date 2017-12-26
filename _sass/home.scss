@@ -1,0 +1,132 @@
+
+/*---------- GENERAL ----------*/
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	-webkit-background-size: cover;
+	background-size: cover;
+	font-family: -apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+/*---------- UTILITIES ----------*/
+
+.clear {
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		content: ' ';
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+
+}
+
+.list-unstyled {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/*---------- PROFILE_CARD ----------*/
+
+.profile-card {
+	background-color: #fff;
+	bottom: 0;
+	color: #111;
+	height: 32em;
+	left: 0;
+	margin: auto;
+	max-width: 32em;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0;
+
+	a {
+		color: #111;
+	}
+
+	img {
+		width: 8em;
+		border: 2px solid #ddd;
+		border-radius: 50%;
+		background-clip: padding-box;
+		margin: 1em;
+	}
+
+	h1 {
+		color: #111;
+		font-size: 2em;
+		line-height: 1.2em;
+		margin: 0;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		font-size: 1.25em;
+		line-height: 1.2em;
+		margin: 0 0 4em 0;
+	}
+
+	.btn {
+		border: 1px solid #ddd;
+		display: block;
+		margin: 0 auto 2em auto;
+		padding: .5em 0;
+		text-transform: uppercase;
+		width: 90%;
+	}
+
+	.author__urls-wrapper{
+		display: table;
+		margin: 0 auto;
+	}
+
+	.social {
+		@extend .clear;
+		@extend .list-unstyled;
+		font-size: 1.5em;
+		text-align: center;
+
+		li {
+			float: left;
+			margin: 4px 10px;
+		}
+
+		a {
+			display: block;
+		}
+
+	}
+
+	.blog__latest{
+		margin-top: 2em;
+
+		a {
+			color: #3280ff;
+			font-size: 1.4em;
+
+			&:hover {
+				color: #111;
+			}
+		}
+	}
+}

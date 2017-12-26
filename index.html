@@ -1,0 +1,138 @@
+--- 
+---
+
+<!-- based on https://codepen.io/marcobiedermann/pen/qJilF -->
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+  <head>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400">
+        <link rel="stylesheet" href="https://lankaapura.github.io/assets/css/home.css">
+  </head>
+
+  <body>
+
+        {% if page.author and site.data.authors[page.author] %}
+        {% assign author = site.data.authors[page.author] %}
+      {% else %}
+        {% assign author = site.author %}
+      {% endif %}
+
+        <div class="profile-card">
+
+                <div itemscope itemtype="http://schema.org/Person">
+
+                    {% if author.avatar %}
+                      <div class="author__avatar">
+                        {% if author.avatar contains "://" %}
+                          {% assign author_src = author.avatar %}
+                        {% else %}
+                          {% assign author_src = author.avatar | absolute_url %}
+                        {% endif %}
+                  
+                        {% if author.home %}
+                          {% if author.home contains "://" %}
+                            {% assign author_link = author.home %}
+                          {% else %}
+                            {% assign author_link = author.home | absolute_url %}
+                          {% endif %}
+                          <a href="{{ author_link }}">
+                            <img src="{{ author_src }}" alt="{{ author.name }}" itemprop="image">
+                          </a>
+                        {% else %}
+                          <img src="{{ author_src }}" alt="{{ author.name }}" itemprop="image">
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                  
+                    <div class="author__content">
+                      {% if author.home %}
+                        <a href="{{ author_link }}"><h3 class="author__name" itemprop="name">{{ author.name }}</h3></a>
+                      {% else %}
+                        <h3 class="author__name" itemprop="name">{{ author.name }}</h3>
+                      {% endif %}
+                      {% if author.bio %}
+                        <p class="author__bio" itemprop="description">
+                          {{ author.bio }}
+                        </p>
+                      {% endif %}
+                    </div>
+                  
+                    <div class="author__urls-wrapper">
+                     <ul class="social author__urls social-icons">
+                  
+                        {% if author.email %}
+                          <li>
+                            <a href="mailto:{{ author.email }}">
+                              <meta itemprop="email" content="{{ author.email }}" />
+                              <i class="fa fa-fw fa-envelope" aria-hidden="true"></i> 
+                            </a>
+                          </li>
+                        {% endif %}
+                  
+                        {% if author.twitter %}
+                          <li>
+                            <a href="https://twitter.com/{{ author.twitter }}" itemprop="sameAs">
+                              <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i>
+                            </a>
+                          </li>
+                        {% endif %}
+                  
+                        {% if author.linkedin %}
+                          <li>
+                            <a href="https://www.linkedin.com/in/{{ author.linkedin }}" itemprop="sameAs">
+                              <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i>
+                            </a>
+                          </li>
+                        {% endif %}
+                  
+                        {% if author.github %}
+                          <li>
+                            <a href="https://github.com/{{ author.github }}" itemprop="sameAs">
+                              <i class="fa fa-fw fa-github" aria-hidden="true"></i>
+                            </a>
+                          </li>
+                        {% endif %}
+                
+                        {% if author.stackoverflow %}
+                          <li>
+                            <a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}" itemprop="sameAs">
+                              <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i>
+                            </a>
+                          </li>
+                        {% endif %}
+                  
+                  
+                      </ul>
+                    </div>
+                </div>
+                  
+                {% assign f_post = site.posts.first %} 
+                {% if f_post %}
+                <div class="blog__latest" itemprop="text">
+                    <div class="blog__latest__header">
+                      Latest Blog Post
+                    </div>
+                    <div class="blog__content">
+                        {% if f_post.title %}
+                        <a href="{{ root_url }}{{ f_post.url }}">{{ f_post.title | markdownify | strip_html | strip_newlines | escape_once }}</a>
+                        {% endif %}
+<!-- 
+                        {% if f_post.description %}
+                        <p>{{ f_post.description | markdownify | strip_html | strip_newlines | escape_once }}</p>
+                        {% endif %} 
+                        
+                        {% if f_post.date %}
+                        <p>{{ f_post.date | date: " %B %d, %Y " }}</p>
+                        {% endif %} 
+                        
+                        {% if f_post.last_modified_at %}
+                        <p>{{ f_post.last_modified_at | date: " %B %d, %Y " }}</p>
+                        {% endif %} -->
+                    </div>
+                  </div>
+                  
+                  {% endif %}
+            </div> <!-- end profile-card -->        
+
+  </body>
+</html>
