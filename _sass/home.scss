@@ -60,6 +60,10 @@ a {
 	text-align: center;
 	top: 0;
 
+	.author__name, .author__bio{
+		margin: 0px 0px 5px 0px;
+	}
+
 	a {
 		color: #111;
 	}
