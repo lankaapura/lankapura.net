@@ -91,7 +91,7 @@
 
                 <div itemscope itemtype="http://schema.org/Person">
 
-                    {% if author.avatar %}
+                    <!-- {% if author.avatar %}
                       <div class="author__avatar">
                         {% if author.avatar contains "://" %}
                           {% assign author_src = author.avatar %}
@@ -112,7 +112,7 @@
                           <img src="{{ author_src }}" alt="{{ author.name }}" itemprop="image">
                         {% endif %}
                       </div>
-                    {% endif %}
+                    {% endif %} -->
                   
                     <div class="author__content">
                       {% if author.home %}
@@ -201,7 +201,7 @@
                             {% if f_post.title %}
                             <a href="{{ root_url }}{{ f_post.url }}">{{ f_post.title | markdownify | strip_html | strip_newlines | escape_once }}</a>
                             {% endif %}
-    <!-- 
+     
                             {% if f_post.description %}
                             <p>{{ f_post.description | markdownify | strip_html | strip_newlines | escape_once }}</p>
                             {% endif %} 
@@ -212,7 +212,7 @@
 
                             {% if f_post.last_modified_at %}
                             <p>{{ f_post.last_modified_at | date: " %B %d, %Y " }}</p>
-                            {% endif %} -->
+                            {% endif %} 
                         </div>
                       
                     </div>
