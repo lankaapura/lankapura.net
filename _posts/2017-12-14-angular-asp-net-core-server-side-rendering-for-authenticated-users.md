@@ -1,7 +1,8 @@
 ---
 title: "Angular/Asp.Net Core Server Side Rendering for Authenticated Users"
 header:
-  og_image: https://i.imgur.com/HSRXWaI.png
+description: How to get server side rendering work for authenticated requestes using cookies.
+og_image: https://i.imgur.com/HSRXWaI.png
 ---
 
 This is a follow up to “[Angular/Asp.Net Core Authentication with Identity Server 4.](https://medium.com/@lankapura/angular-asp-net-core-authentication-with-identity-server-4-65db6b9f7c2a)” I’ll be using the same source code in this post.
