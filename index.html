@@ -18,6 +18,24 @@
         gtag('config', 'UA-62343349-1');
       </script>
 
+                  <script>
+    window.twttr = (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function (f) {
+        t._e.push(f);
+      };
+
+      return t;
+    }(document, "script", "twitter-wjs"));
+  </script>
   </head>
 
   <body>
@@ -140,10 +158,33 @@
                         <p>{{ f_post.last_modified_at | date: " %B %d, %Y " }}</p>
                         {% endif %} -->
                     </div>
+                  
+                    <div id="latest_tweet"></div>
                   </div>
                   
                   {% endif %}
             </div> <!-- end profile-card -->        
 
+    
+                  <script>
+
+    window.twttr.ready(function () {
+
+      twttr.widgets.createTimeline(
+        {
+          sourceType: 'profile',
+          screenName: '{{ author.twitter }}'
+        },
+        document.getElementById('latest_tweet'),
+        {
+          tweetLimit: '1',
+          width: '450',
+          height: '200',
+          chrome: 'noheader, nofooter, noborders, transparent, noscrollbar'
+        }
+      );
+
+    });
+  </script>
   </body>
 </html>
