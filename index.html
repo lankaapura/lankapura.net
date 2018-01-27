@@ -18,24 +18,6 @@
         gtag('config', 'UA-62343349-1');
       </script>
 
-                  <script>
-    window.twttr = (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0],
-        t = window.twttr || {};
-      if (d.getElementById(id)) return t;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://platform.twitter.com/widgets.js";
-      fjs.parentNode.insertBefore(js, fjs);
-
-      t._e = [];
-      t.ready = function (f) {
-        t._e.push(f);
-      };
-
-      return t;
-    }(document, "script", "twitter-wjs"));
-  </script>
   </head>
 
   <body>
@@ -138,53 +120,50 @@
                 {% assign f_post = site.posts.first %} 
                 {% if f_post %}
                 <div class="blog__latest" itemprop="text">
-                    <div class="blog__latest__header">
-                      Latest Blog Post
-                    </div>
-                    <div class="blog__content">
-                        {% if f_post.title %}
-                        <a href="{{ root_url }}{{ f_post.url }}">{{ f_post.title | markdownify | strip_html | strip_newlines | escape_once }}</a>
-                        {% endif %}
-<!-- 
-                        {% if f_post.description %}
-                        <p>{{ f_post.description | markdownify | strip_html | strip_newlines | escape_once }}</p>
-                        {% endif %} 
-                        
-                        {% if f_post.date %}
-                        <p>{{ f_post.date | date: " %B %d, %Y " }}</p>
-                        {% endif %} 
-                        
-                        {% if f_post.last_modified_at %}
-                        <p>{{ f_post.last_modified_at | date: " %B %d, %Y " }}</p>
-                        {% endif %} -->
-                    </div>
                   
-                    <div id="latest_tweet"></div>
+                  <div class='slider'>
+                    <div class='slide1'>
+                        <a class="twitter-timeline"
+                    data-width="400"
+                    data-height="200"
+                    data-chrome="noheader nofooter noborders noscrollbar transparent" 
+                    data-tweet-limit="1"
+                    href="https://twitter.com/PSLankapura?ref_src=twsrc%5Etfw"></a>
+                    <script
+                      async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+
+                    <div class='slide2'>
+                           
+                        <div class="blog__latest__header">
+                          Latest Blog Post
+                        </div>
+                        <div class="blog__content">
+                            {% if f_post.title %}
+                            <a href="{{ root_url }}{{ f_post.url }}">{{ f_post.title | markdownify | strip_html | strip_newlines | escape_once }}</a>
+                            {% endif %}
+    <!-- 
+                            {% if f_post.description %}
+                            <p>{{ f_post.description | markdownify | strip_html | strip_newlines | escape_once }}</p>
+                            {% endif %} 
+
+                            {% if f_post.date %}
+                            <p>{{ f_post.date | date: " %B %d, %Y " }}</p>
+                            {% endif %} 
+
+                            {% if f_post.last_modified_at %}
+                            <p>{{ f_post.last_modified_at | date: " %B %d, %Y " }}</p>
+                            {% endif %} -->
+                        </div>
+                      
+                    </div>
+
+                    </div>
+                  </div>
+                  
                   </div>
                   
                   {% endif %}
             </div> <!-- end profile-card -->        
-
-    
-                  <script>
-
-    window.twttr.ready(function () {
-
-      <!-- twttr.widgets.createTimeline(
-        {
-          sourceType: 'profile',
-          screenName: '{{ author.twitter }}'
-        },
-        document.getElementById('latest_tweet'),
-        {
-          tweetLimit: '1',
-          width: '450',
-          height: '200',
-          chrome: 'noheader, nofooter, noborders, transparent, noscrollbar'
-        }
-      ); -->
-
-    });
-  </script>
   </body>
 </html>
