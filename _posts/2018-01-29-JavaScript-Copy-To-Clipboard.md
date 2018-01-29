@@ -9,7 +9,7 @@ Ever wanted to copy something to the clipboard programmatically using javascript
 
 ## Simple Use Cases
 
-We can you following simple function to copy some variable to clip board. One important thing to remember is that Copy commands triggered from document.execCommand() will only work if the event is dispatched from an event that is trusted and triggered by the user.
+We can you following simple function to copy some variable to clip board.
 
 ```javascript
   function CopyToClipBoardHandler(value) {
@@ -67,6 +67,16 @@ More examples can be found on [github](https://github.com/zenorocha/clipboard.js
   Click to copy
   </button>
 </div>
+
+## Important
+
+- Copy commands triggered from document.execCommand() will only work if the event is dispatched from an event that is trusted and triggered by the user.
+
+- Browser compatibility
+
+  | <i class="fa fa-chrome" aria-hidden="true"></i> | <i class="fa fa-edge" aria-hidden="true"></i> | <i class="fa fa-firefox" aria-hidden="true"></i> | <i class="fa fa-internet-explorer" aria-hidden="true"></i> | <i class="fa fa-opera" aria-hidden="true"></i> | <i class="fa fa-safari" aria-hidden="true"></i> |
+  |:---:|:---:|:---:|:---:|:---:|:---:|
+  | 42+ | 12+ | 41+ | 9+ | 29+ | 10+ |
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
 
