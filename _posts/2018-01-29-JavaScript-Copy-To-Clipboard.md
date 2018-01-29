@@ -25,6 +25,9 @@ We can you following simple function to copy some variable to clip board. One im
   }
 }
 ```
+
+### Demo
+
  <div class="wrapper">
   <button class="button" id="copy1">
   Click to copy
@@ -56,7 +59,9 @@ I know you can handle any advanced use case by yourself. But all the hardwork is
     });
     </script>
 ```
+More examples can be found on [github](https://github.com/zenorocha/clipboard.js/tree/master/demo).
 
+### Demo
  <div class="wrapper">
   <button class="button" id="copy2" data-clipboard-text="Hello Clip Board!! I am from clipboardJS.">
   Click to copy
