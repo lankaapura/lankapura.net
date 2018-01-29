@@ -5,6 +5,7 @@ description: How to copy a text to clipboard?
 og_image: 
 ---
 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
 Ever wanted to copy something to the clipboard programmatically using javascript? Here's how do it for few diffrent use cases.
 
 ## Simple Use Cases
