@@ -5,8 +5,6 @@ description: How to copy a text to clipboard?
 og_image: 
 ---
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
-
 Ever wanted to copy something to the clipboard programmatically using javascript? Here's how do it for few diffrent use cases.
 
 ## Simple Use Cases
@@ -29,7 +27,7 @@ We can you following simple function to copy some variable to clip board. One im
 ```
  <div class="wrapper">
   <button class="button" id="copy1">
-  <i class="fa fa-fw fa-copy" aria-hidden="true"></i>Click to copy
+  Click to copy
   </button>
 </div>
 
@@ -66,12 +64,12 @@ I know you can handle any advanced use case by yourself. But all the hardwork is
 
 <!-- Trigger -->
 <button class="btn" data-clipboard-target="#foo">
-<i class="fa fa-fw fa-copy" aria-hidden="true"></i>
 Click to copy
 </button>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
 <script type="text/javascript">
-
+debugger
 function CopyToClipBoardHandler(text) {
   const copyListener = event => {
     document.removeEventListener("copy", copyListener, true);
