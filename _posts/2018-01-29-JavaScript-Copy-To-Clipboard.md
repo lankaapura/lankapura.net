@@ -57,10 +57,11 @@ I know you can handle any advanced use case by yourself. But all the hardwork is
     </script>
 ```
 
-  <div id="btn" data-clipboard-text="1">
-      <span>Click to Copy</span>
-  </div>
-
+ <div class="wrapper">
+  <button class="button" id="copy2" data-clipboard-text="Hello Clip Board!! I am from clipboardJS.">
+  Click to copy
+  </button>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
 
@@ -86,7 +87,7 @@ button1.addEventListener("click", function(e) {
   CopyToClipBoardHandler(uc1);
 });
 
-var btn = document.getElementById('btn');
+var btn = document.getElementById('copy2');
 var clipboard = new Clipboard(btn);
 clipboard.on('success', function(e) {
 debugger
