@@ -6,11 +6,11 @@ og_image:
 ---
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-Ever wanted to copy something to the clipboard programmatically using javascript? Here's how do it for few different use cases.
+Ever wanted to copy something to the clipboard programmatically using javascript? Here’s how to do it for few different use cases.
 
 ## Simple Use Cases
 
-We can use following simple function to copy any variable to clip board.
+We can use following simple function to copy any variable to clipboard.
 
 ```javascript
   function CopyToClipBoardHandler(value) {
@@ -37,7 +37,7 @@ We can use following simple function to copy any variable to clip board.
 
 ## Advanced Use Cases
 
-We can use [clipboardjs](https://clipboardjs.com/) to implement advanced requirements. You can set it up with few lines of code and it doesn't have any external dependencies and it's only 3KB.
+We can use [clipboardjs](https://clipboardjs.com/) to implement advanced requirements. You can set it up with few lines of code, it doesn’t have any external dependencies, and it’s only 3KB.
 
 ```html
     <!-- 1. Define some markup -->
