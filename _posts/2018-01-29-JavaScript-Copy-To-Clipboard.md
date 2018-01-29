@@ -95,7 +95,6 @@ button1.addEventListener("click", function(e) {
 var btn = document.getElementById('copy2');
 var clipboard = new Clipboard(btn);
 clipboard.on('success', function(e) {
-debugger
     console.log(e);
 });
 clipboard.on('error', function(e) {
