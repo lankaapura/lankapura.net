@@ -35,8 +35,7 @@ We can you following simple function to copy some variable to clip board. One im
 
 I know you can handle any advanced use case by yourself. But all the hardwork is already done by [clipboardjs](https://clipboardjs.com/). You can set it up with few lines of code and it doesn't have any external dependencies and it's only 3KB.
 
-
-```HTML
+```html
     <!-- 1. Define some markup -->
     <div id="btn" data-clipboard-text="1">
         <span>Copy</span>
@@ -58,18 +57,15 @@ I know you can handle any advanced use case by yourself. But all the hardwork is
     </script>
 ```
 
+  <div id="btn" data-clipboard-text="1">
+      <span>Click to Copy</span>
+  </div>
 
-<!-- Target -->
-<input id="uc2" value="Hello Clip Board! Im from clipboardJS">
-
-<!-- Trigger -->
-<button class="btn" data-clipboard-target="#foo">
-Click to copy
-</button>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+
 <script type="text/javascript">
-debugger
+
 function CopyToClipBoardHandler(text) {
   const copyListener = event => {
     document.removeEventListener("copy", copyListener, true);
@@ -90,14 +86,17 @@ button1.addEventListener("click", function(e) {
   CopyToClipBoardHandler(uc1);
 });
 
-//clipboardjs
-  var btn = document.getElementById('uc2');
-  var clipboard = new Clipboard(btn);
-  clipboard.on('success', function(e) {
-      console.log(e);
-  });
-  clipboard.on('error', function(e) {
-      console.log(e);
-  });
 </script>
+
+    <script>
+    var btn = document.getElementById('btn');
+    var clipboard = new Clipboard(btn);
+    clipboard.on('success', function(e) {
+    debugger
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    </script>
 
