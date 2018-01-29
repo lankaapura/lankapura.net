@@ -75,7 +75,7 @@ More examples can be found on [github](https://github.com/zenorocha/clipboard.js
 
 - Browser compatibility
 
-| <img src="http://www.lankapura.net/assets/images/browsers/chrome.png" width="48px" height="48px" alt="Chrome logo"> | <img src="http://www.lankapura.net/assets/images/browsers/edge.png" width="48px" height="48px" alt="Edge logo"> | <img src="http://www.lankapura.net/assets/images/browsers/firefox.png" width="48px" height="48px" alt="Firefox logo"> | <img src="http://www.lankapura.net/assets/images/browsers/ie.png" width="48px" height="48px" alt="Internet Explorer logo"> | <img src="http://www.lankapura.net/assets/images/browsers/opera.png" width="48px" height="48px" alt="Opera logo"> | <img src="http://www.lankapura.net/assets/images/browsers/safari.png" width="48px" height="48px" alt="Safari logo"> |
+  | <img src="http://www.lankapura.net/assets/images/browsers/chrome.png" width="48px" height="48px" alt="Chrome logo"> | <img src="http://www.lankapura.net/assets/images/browsers/edge.png" width="48px" height="48px" alt="Edge logo"> | <img src="http://www.lankapura.net/assets/images/browsers/firefox.png" width="48px" height="48px" alt="Firefox logo"> | <img src="http://www.lankapura.net/assets/images/browsers/ie.png" width="48px" height="48px" alt="Internet Explorer logo"> | <img src="http://www.lankapura.net/assets/images/browsers/opera.png" width="48px" height="48px" alt="Opera logo"> | <img src="http://www.lankapura.net/assets/images/browsers/safari.png" width="48px" height="48px" alt="Safari logo"> |
   |:---:|:---:|:---:|:---:|:---:|:---:|
   | 42+ | 12+ | 41+ | 9+ | 29+ | 10+ |
 
