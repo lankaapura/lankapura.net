@@ -9,7 +9,7 @@ Ever wanted to copy something to the clipboard programmatically using javascript
 
 ## Simple Use Cases
 
-We can you following simple function to copy some variable to clip board.
+We can use following simple function to copy any variable to clip board.
 
 ```javascript
   function CopyToClipBoardHandler(value) {
