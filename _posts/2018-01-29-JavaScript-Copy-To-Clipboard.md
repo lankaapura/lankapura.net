@@ -86,17 +86,14 @@ button1.addEventListener("click", function(e) {
   CopyToClipBoardHandler(uc1);
 });
 
+var btn = document.getElementById('btn');
+var clipboard = new Clipboard(btn);
+clipboard.on('success', function(e) {
+debugger
+    console.log(e);
+});
+clipboard.on('error', function(e) {
+    console.log(e);
+});
 </script>
-
-    <script>
-    var btn = document.getElementById('btn');
-    var clipboard = new Clipboard(btn);
-    clipboard.on('success', function(e) {
-    debugger
-        console.log(e);
-    });
-    clipboard.on('error', function(e) {
-        console.log(e);
-    });
-    </script>
 
