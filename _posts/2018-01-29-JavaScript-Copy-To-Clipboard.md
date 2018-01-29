@@ -1,13 +1,15 @@
 ---
-title: "Copy to Clipboard in Javascript"
+title: "Copy to Clipboard Using Javascript"
 header:
-description: How to copy text to clipboard?
+description: How to copy a text to clipboard?
 og_image: 
 ---
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+
 Ever wanted to copy something to the clipboard programmatically using javascript? Here's how do it for few diffrent use cases.
 
-## Simple Use Case
+## Simple Use Cases
 
 We can you following simple function to copy some variable to clip board. One important thing to remember is that Copy commands triggered from document.execCommand() will only work if the event is dispatched from an event that is trusted and triggered by the user.
 
@@ -26,9 +28,47 @@ We can you following simple function to copy some variable to clip board. One im
 }
 ```
  <div class="wrapper">
-  <button class="button" id="copy1">Click to copy</button>
+  <button class="button" id="copy1">
+  <i class="fa fa-fw fa-copy" aria-hidden="true"></i>Click to copy
+  </button>
 </div>
 
+## Advanced Use Cases
+
+I know you can handle any advanced use case by yourself. But all the hardwork is already done by [clipboardjs](https://clipboardjs.com/). You can set it up with few lines of code and it doesn't have any external dependencies and it's only 3KB.
+
+
+```HTML
+    <!-- 1. Define some markup -->
+    <div id="btn" data-clipboard-text="1">
+        <span>Copy</span>
+    </div>
+
+    <!-- 2. Include library -->
+    <script src="clipboard.min.js"></script>
+
+    <!-- 3. Instantiate clipboard by passing a HTML element -->
+    <script>
+    var btn = document.getElementById('btn');
+    var clipboard = new Clipboard(btn);
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    </script>
+```
+
+
+<!-- Target -->
+<input id="uc2" value="Hello Clip Board! Im from clipboardJS">
+
+<!-- Trigger -->
+<button class="btn" data-clipboard-target="#foo">
+<i class="fa fa-fw fa-copy" aria-hidden="true"></i>
+Click to copy
+</button>
 
 <script type="text/javascript">
 
@@ -51,4 +91,15 @@ button1.addEventListener("click", function(e) {
   e.preventDefault();
   CopyToClipBoardHandler(uc1);
 });
+
+//clipboardjs
+  var btn = document.getElementById('uc2');
+  var clipboard = new Clipboard(btn);
+  clipboard.on('success', function(e) {
+      console.log(e);
+  });
+  clipboard.on('error', function(e) {
+      console.log(e);
+  });
 </script>
+
