@@ -26,11 +26,8 @@ We can you following simple function to copy some variable to clip board. One im
 }
 ```
  <div class="wrapper">
-  <input id="uc1" value="I just copied this with only JavaScript"/>
   <button class="button" id="copy1">Click to copy</button>
 </div>
-
-
 
 
 <script type="text/javascript">
