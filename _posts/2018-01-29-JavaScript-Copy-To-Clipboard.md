@@ -36,7 +36,7 @@ We can you following simple function to copy some variable to clip board. One im
 
 ## Advanced Use Cases
 
-I know you can handle any advanced use case by yourself. But all the hardwork is already done by [clipboardjs](https://clipboardjs.com/). You can set it up with few lines of code and it doesn't have any external dependencies and it's only 3KB.
+We can use [clipboardjs](https://clipboardjs.com/) to implement advanced requirements. You can set it up with few lines of code and it doesn't have any external dependencies and it's only 3KB.
 
 ```html
     <!-- 1. Define some markup -->
