@@ -181,10 +181,6 @@ prose:
     - /_includes
   metadata:
     _posts:
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "blog"
       - name: "tags"
         field:
           element: "multiselect"
@@ -195,6 +191,12 @@ prose:
               value: "javascript"
             - name: ".NET"
               value: "dotnet"
+            - name: "ASP.NET"
+              value: "aspdotnet"
+            - name: "ASP.NET"
+              value: "aspdotnet"
+            - name: "Angular"
+              value: "angular"
     _posts/static:
       - name: "layout"
         field:
