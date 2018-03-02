@@ -1,5 +1,4 @@
 ---
-layout: blog
 title: Copy to Clipboard Using Javascript
 header: null
 description: How to copy a text to clipboard?
