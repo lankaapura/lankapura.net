@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: lankaapura/lankapura.net
 
 media_folder: "assets/images" # Folder where user uploaded files should go
 
