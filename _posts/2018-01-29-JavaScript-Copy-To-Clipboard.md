@@ -1,8 +1,10 @@
 ---
-title: "Copy to Clipboard Using Javascript"
-header:
+layout: blog
+title: Copy to Clipboard Using Javascript
+header: null
 description: How to copy a text to clipboard?
-og_image: 
+og_image: null
+published: true
 ---
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
@@ -112,4 +114,3 @@ clipboard.on('error', function(e) {
     console.log(e);
 });
 </script>
-
