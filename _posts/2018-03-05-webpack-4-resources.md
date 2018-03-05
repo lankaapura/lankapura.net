@@ -1,5 +1,7 @@
 ---
 published: false
+tags:
+  - javascript
 ---
 ## Webpack 4 Resources
 
