@@ -3,8 +3,6 @@ published: true
 tags:
   - javascript
 ---
-## Webpack 4 Resources
-
 Webpack 4 : Legato is out with a lot of new features. Here’s a curated list of related blog posts that I found.
 
 - [🎼webpack 4: released today!!✨](https://medium.com/webpack/webpack-4-released-today-6cdb994702d4)by Sean T. Larkin
