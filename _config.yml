@@ -27,6 +27,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-remote-theme
+  - jekyll-include-cache
 
 minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
