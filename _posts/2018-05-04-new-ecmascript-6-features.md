@@ -386,3 +386,8 @@ Following are the list of new features available in ECMAScript 6.
   ```
   
   Code samples from [es6-features.org](http://es6-features.org/).
+  
+  Read more about ES6 and ESNext:
+  * [exploringjs](http://exploringjs.com/)
+  * [2ality](http://2ality.com/index.html)
+
