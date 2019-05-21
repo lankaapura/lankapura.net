@@ -58,4 +58,5 @@ So you have been assigned to an Angular project? You need to get yourself up to 
 - [Angular Blog](https://blog.angular.io/)
 - [swissangular](https://swissangular.com/)
 - [angularindepth](https://blog.angularindepth.com/)
+- [toptal angular blogs](https://www.toptal.com/developers/blog/tags/angular)
 
