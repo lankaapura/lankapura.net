@@ -1,15 +1,10 @@
 <div class="header">
 
     <script>
-        $(document).ready(function () {
-            $('.breadcrumbs li a').each(function(){
-                var href = $(this).attr('href');
-                if(href === '/categories/#blog') {
-                    $(this).attr("href", "https://www.lankapura.net/blog/")
-                }
-            });
-        });
-
+        var blogA = document.querySelector(".breadcrumbs li a[href='/categories/#blog']");
+        if(blogA){
+            blogA.href = "https://www.lankapura.net/blog/";
+        }
       </script>
   
     <!-- <div class="content">
