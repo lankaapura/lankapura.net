@@ -11,44 +11,24 @@ The .Net team recently released a new **mage** dotnet tool to create ClickOnce p
 
 - **Unique Application Names** - To avoid installation failures, unique application names must be used in application and deployment manifest files for each environment. This is because Windows doesn't allow installing multiple applications with the same name. For example, if an app is to be named 'MyApp', the staging application would need to be denoted as 'My App (STG)' while the production application should be 'My App'. Both cannot be named 'My App'.
 - **Custom Settings** - There are instances when different settings need to be used for each environment. For example, different API urls based on the environment.
-- **Download Location -** The ****ClickOnce package needs to be hosted in a place where users can download and install it. The same location will be used to push new updates to the application.
+- **Download Location -** The ClickOnce package needs to be hosted in a place where users can download and install it. The same location will be used to push new updates to the application.
 
 If you are new to ClickOnce and Azure DevOps, it is best to go through the following articles first.
 
-- ClickOnce - [https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2019](https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2019)
-- Application Manifest - [https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-application-manifest?view=vs-2019](https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-application-manifest?view=vs-2019)
-- Deployment  Manifest - [https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-deployment-manifest?view=vs-2019](https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-deployment-manifest?view=vs-2019)
-- Azure DevOps Pipelines - [https://docs.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops](https://docs.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops)
-- Multi Stage Pipelines - [https://docs.microsoft.com/en-us/learn/modules/create-multi-stage-pipeline/](https://docs.microsoft.com/en-us/learn/modules/create-multi-stage-pipeline/)
-- Azure Pipeline Templates - [https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops)
+- [Clickonce Security & Deployment](https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2019)
+- [Clickonce Application Mmanifest](https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-application-manifest?view=vs-2019)
+- [Clickonce Deployment Manifest](https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-deployment-manifest?view=vs-2019)
+- [Azure DevOps Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops)
+- [Multi Stage Pipelines](https://docs.microsoft.com/en-us/learn/modules/create-multi-stage-pipeline/)
+- [Azure Pipeline Templates](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops)
 
  In this post, 
 
-1. We will be deploying WPF ClickOnce package to Azure App Service. 
-
-    ClickOnce download page - [https://prism-web-as-dev-ae.azurewebsites.net/](https://prism-web-as-dev-ae.azurewebsites.net/)
-    ![ClickOnce download page](https://i.imgur.com/ePWCNPZ.png)
+1. We will be deploying WPF ClickOnce package to Azure App Service.
 
 2. We will have ClickOnce packages and installations per environment (DEV, SIT etc..)
 
-    Deployed WPF sample app in the start menu.
-
-    ![App on Start Menu](https://i.imgur.com/66DE9zR.png)
-
-    Installed WPF sample app running side by side.
-
-    ![Installed WPF sample app running side by side](https://i.imgur.com/8Fndv1L.png)
-
 3. Most importantly, we are going use the Azure DevOps Pipeline to achieve both of above
-
-    [https://dev.azure.com/pridevops/Prism/_build?definitionId=2&_a=summary](https://dev.azure.com/pridevops/Prism/_build?definitionId=2&_a=summary)
-
-    Multi stage pipeline to build and deploy Razor pages app with ClickOnce package.
-    ![Multi stage pipeline to build and deploy Razor pages app with ClickOnce package.](https://i.imgur.com/m5vuBV5.png)
-
-    Pipeline steps of Build stage and Dev Deploy stage.
-    ![Pipeline steps of Build stage and Dev Deploy stage.](https://i.imgur.com/dOVcWP6.png)
-
 
 ## Build & Publish
 
@@ -105,7 +85,7 @@ Here, a simple PowerShell script is used to replace variables, as only one varia
 
 ## Generate ClickOnce Package
 
-First, install the **mage** dotnet tool.
+### First, install the **mage** dotnet tool.
 
 ```yaml
 - task: CmdLine@2
@@ -114,7 +94,7 @@ First, install the **mage** dotnet tool.
         script: 'dotnet tool install --global microsoft.dotnet.mage --version 5.0.0'
 ```
 
-Generate launcher.exe
+### Generate launcher.exe
 
 ```yaml
 - task: CmdLine@2
@@ -124,7 +104,7 @@ Generate launcher.exe
         workingDirectory: '$(Pipeline.Workspace)\drop\PrismWeb\wwwroot\client'
 ```
 
-Create the application manifest
+### Create the application manifest
 
 ```yaml
 - task: CmdLine@2
@@ -134,7 +114,7 @@ Create the application manifest
         workingDirectory: '$(Pipeline.Workspace)\drop\PrismWeb\wwwroot\client'
 ```
 
-Create the deployment manifest
+### Create the deployment manifest
 
 ```yaml
 - task: CmdLine@2
@@ -144,7 +124,7 @@ Create the deployment manifest
         workingDirectory: '$(Pipeline.Workspace)\drop\PrismWeb\wwwroot\client'
 ```
 
-Update the file extension to .deploy as a workaround for download restrictions.
+### Update the file extension to .deploy as a workaround for download restrictions
 
 ```yaml
 - task: PowerShell@2
@@ -155,7 +135,7 @@ Update the file extension to .deploy as a workaround for download restrictions.
         workingDirectory: '$(Pipeline.Workspace)\drop\PrismWeb\wwwroot\client\files'
 ```
 
-mapFileExtensions needs to be set to true in the deployment manifest when files have .deploy extension.
+### mapFileExtensions needs to be set to true in the deployment manifest when files have .deploy extension
 
 ```yaml
 - task: PowerShell@2
@@ -200,17 +180,41 @@ dotnet mage -new Deployment -Install true -pub "Prism Tech" -v 1.0.0.2 -AppManif
         deploymentMethod: 'auto'
 ```
 
-Deployed files in Azure app service
+### Outcome
 
-![Deployed files in Azure app service](https://i.imgur.com/3Gma5eY.png)
-<!-- ![Deployed files in Azure app service](azure-app-service-editor.png) -->
+- Azure DevOps Pipelines
+
+  Multi stage pipeline to build and deploy Razor pages app with ClickOnce package.
+  ![Multi stage pipeline to build and deploy Razor pages app with ClickOnce package.](https://i.imgur.com/m5vuBV5.png)
+
+  Pipeline steps of Build stage and Dev Deploy stage.
+  ![Pipeline steps of Build stage and Dev Deploy stage.](https://i.imgur.com/dOVcWP6.png)
+
+  DevOps URL: [https://dev.azure.com/pridevops/Prism/_build?definitionId=2&_a=summary](https://dev.azure.com/pridevops/Prism/_build?definitionId=2&_a=summary)
+
+- Website to download ClickOnce package
+
+  [https://prism-web-as-dev-ae.azurewebsites.net/](https://prism-web-as-dev-ae.azurewebsites.net/)
+
+  ![ClickOnce download page](https://i.imgur.com/ePWCNPZ.png)
+
+
+  Here's how deployed files look like in Azure app service
+
+  ![Deployed files in Azure app service](https://i.imgur.com/3Gma5eY.png)
+  <!-- ![Deployed files in Azure app service](azure-app-service-editor.png) -->
+
+- Installed WPF App
+
+  Deployed WPF sample app in the start menu.
+
+  ![App on Start Menu](https://i.imgur.com/66DE9zR.png)
+
+  Installed WPF sample app running side by side.
+
+  ![Installed WPF sample app running side by side](https://i.imgur.com/8Fndv1L.png)
 
 Full source code is available at [https://github.com/lankaapura/prism](https://github.com/lankaapura/prism)
-
-Web Apps can be found at:
-
-- Dev - [https://prism-web-as-dev-ae.azurewebsites.net/](https://prism-web-as-dev-ae.azurewebsites.net/)
-- SIT - [https://prism-web-as-sit-ae.azurewebsites.net/](https://prism-web-as-sit-ae.azurewebsites.net/)
 
 Documentation for the dotnet mage and mage.exe can be found at:
 
