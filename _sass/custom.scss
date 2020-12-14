@@ -1,3 +1,10 @@
 .page__footer{
   display: none;
 }
+
+@media (min-width: 80em){
+    .page {
+      width: calc(100% - 200px);
+      padding-right: 200px;
+  }
+}
