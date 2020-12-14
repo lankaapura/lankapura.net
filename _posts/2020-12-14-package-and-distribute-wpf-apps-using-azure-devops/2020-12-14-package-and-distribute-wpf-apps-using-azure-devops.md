@@ -16,7 +16,7 @@ The .Net team recently released a new **mage** dotnet tool to create ClickOnce p
 If you are new to ClickOnce and Azure DevOps, it is best to go through the following articles first.
 
 - [Clickonce Security & Deployment](https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2019)
-- [Clickonce Application Mmanifest](https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-application-manifest?view=vs-2019)
+- [Clickonce Application Manifest](https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-application-manifest?view=vs-2019)
 - [Clickonce Deployment Manifest](https://docs.microsoft.com/en-us/visualstudio/deployment/clickonce-deployment-manifest?view=vs-2019)
 - [Azure DevOps Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops)
 - [Multi Stage Pipelines](https://docs.microsoft.com/en-us/learn/modules/create-multi-stage-pipeline/)
@@ -85,7 +85,7 @@ Here, a simple PowerShell script is used to replace variables, as only one varia
 
 ## Generate ClickOnce Package
 
-### First, install the **mage** dotnet tool.
+#### First, install the **mage** dotnet tool
 
 ```yaml
 - task: CmdLine@2
@@ -94,7 +94,7 @@ Here, a simple PowerShell script is used to replace variables, as only one varia
         script: 'dotnet tool install --global microsoft.dotnet.mage --version 5.0.0'
 ```
 
-### Generate launcher.exe
+#### Generate launcher.exe
 
 ```yaml
 - task: CmdLine@2
@@ -104,7 +104,7 @@ Here, a simple PowerShell script is used to replace variables, as only one varia
         workingDirectory: '$(Pipeline.Workspace)\drop\PrismWeb\wwwroot\client'
 ```
 
-### Create the application manifest
+#### Create the application manifest
 
 ```yaml
 - task: CmdLine@2
@@ -114,7 +114,7 @@ Here, a simple PowerShell script is used to replace variables, as only one varia
         workingDirectory: '$(Pipeline.Workspace)\drop\PrismWeb\wwwroot\client'
 ```
 
-### Create the deployment manifest
+#### Create the deployment manifest
 
 ```yaml
 - task: CmdLine@2
@@ -124,7 +124,7 @@ Here, a simple PowerShell script is used to replace variables, as only one varia
         workingDirectory: '$(Pipeline.Workspace)\drop\PrismWeb\wwwroot\client'
 ```
 
-### Update the file extension to .deploy as a workaround for download restrictions
+#### Update the file extension to .deploy as a workaround for download restrictions
 
 ```yaml
 - task: PowerShell@2
@@ -135,7 +135,7 @@ Here, a simple PowerShell script is used to replace variables, as only one varia
         workingDirectory: '$(Pipeline.Workspace)\drop\PrismWeb\wwwroot\client\files'
 ```
 
-### mapFileExtensions needs to be set to true in the deployment manifest when files have .deploy extension
+#### mapFileExtensions needs to be set to true in the deployment manifest when files have .deploy extension
 
 ```yaml
 - task: PowerShell@2
@@ -155,7 +155,7 @@ Here, a simple PowerShell script is used to replace variables, as only one varia
         workingDirectory: '$(Pipeline.Workspace)\drop\PrismWeb\wwwroot\client'
 ```
 
-### Sign Manifest
+#### Sign Manifest
 
 The `CertFile` parameter can be used to sign the application and deployment manifest files. When the ClickOnce package is signed, the ClickOnce application publisher is shown on the install prompt, so end-users can verify the publisher of the WPF application. 
 
@@ -167,7 +167,7 @@ dotnet mage -new Deployment -Install true -pub "Prism Tech" -v 1.0.0.2 -AppManif
 
 ![Install prompt](https://i.imgur.com/7gh9Sz6.png)
 
-### Deploy Website
+## Deploy Website
 
 ```yaml
 - task: AzureWebApp@1
@@ -180,7 +180,7 @@ dotnet mage -new Deployment -Install true -pub "Prism Tech" -v 1.0.0.2 -AppManif
         deploymentMethod: 'auto'
 ```
 
-### Outcome
+## Outcome
 
 - Azure DevOps Pipelines
 
