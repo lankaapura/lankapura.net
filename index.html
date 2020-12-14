@@ -119,9 +119,33 @@
                 {% assign f_post = site.posts.first %} 
                 {% if f_post %}
                 <div class="blog__latest" itemprop="text">
+
+                    <div class="blog__latest__header">
+                      Latest Blog Post
+                    </div>
+                    <div class="blog__content">
+                        {% if f_post.title %}
+                        <a href="{{ root_url }}{{ f_post.url }}">{{ f_post.title | markdownify | strip_html | strip_newlines | escape_once }}</a>
+                        {% endif %}
+ 
+                        {% if f_post.description %}
+                        <p>{{ f_post.description | markdownify | strip_html | strip_newlines | escape_once }}</p>
+                        {% endif %} 
+
+                        {% if f_post.date %}
+                        <p>{{ f_post.date | date: " %B %d, %Y " }}</p>
+                        {% endif %} 
+
+                        {% if f_post.last_modified_at %}
+                        <p>{{ f_post.last_modified_at | date: " %B %d, %Y " }}</p>
+                        {% endif %} 
+                    </div>
                   
-                  <div class='slider'>
-                    <!-- <div class='slide1'>
+
+
+
+                  <!-- <div class='slider'>
+                    <div class='slide1'>
                         <a class="twitter-timeline"
                     data-width="400"
                     data-height="200"
@@ -130,7 +154,7 @@
                     href="https://twitter.com/PSLankapura?ref_src=twsrc%5Etfw"></a>
                     <script
                       async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    </div> -->
+                    </div>
 
                     <div class='slide2'>
                            
@@ -157,7 +181,7 @@
                       
                     </div>
 
-                    </div>
+                    </div> -->
                   </div>
                   
                   </div>
