@@ -26,13 +26,11 @@ If you are new to ClickOnce and Azure DevOps, it is best to go through the follo
 - [Multi Stage Pipelines](https://docs.microsoft.com/en-us/learn/modules/create-multi-stage-pipeline/)
 - [Azure Pipeline Templates](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops)
 
- In this post, 
+ In this post,
 
-1. We will be deploying WPF ClickOnce package to Azure App Service.
-
-2. We will have ClickOnce packages and installations per environment (DEV, SIT etc..)
-
-3. Most importantly, we are going use the Azure DevOps Pipeline to achieve both of above
+  1. We will be deploying WPF ClickOnce package to Azure App Service.
+  2. We will have ClickOnce packages and installations per environment (DEV, SIT etc..)
+  3. Most importantly, we are going use the Azure DevOps Pipeline to achieve both of above
 
 ## Build & Publish
 
