@@ -42,8 +42,8 @@ url                      : "http://lankapura.net"
 baseurl                  : #"/blog"
 repository               : "lankaapura/lankapura.net"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-breadcrumbs              : false # true, false (default)
-words_per_minute         : 200
+breadcrumbs              : true # true, false (default)
+words_per_minute         : 120
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
   disqus:
@@ -124,7 +124,7 @@ include:
   - blog
 
 # Outputting
-permalink: /blog/:year/:month/:day/:title
+permalink: /blog/:title
 paginate: 5 # amount of posts to show
 paginate_path: /blog/page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
