@@ -1,9 +1,11 @@
 ---
 title: Package & Distribute WPF Apps using Azure DevOps
 header: 
-  image: https://i.imgur.com/KekaUZe.png
+  overlay_image: https://i.imgur.com/KekaUZe.png
+  show_overlay_excerpt: false
+  overlay_filter: 0.5 
   caption: "Photo credit: [**Mixkit**](https://mixkit.co/)"
-og_image: https://i.imgur.com/KekaUZe.png
+  og_image: https://i.imgur.com/KekaUZe.png
 published: true
 ---
 
