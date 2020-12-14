@@ -1,8 +1,7 @@
 ---
 title: Package & Distribute WPF Apps using Azure DevOps
 header: 
-  overlay_image: https://i.imgur.com/KekaUZe.png
-  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
+  image: https://i.imgur.com/KekaUZe.png
   caption: "Photo credit: [**Mixkit**](https://mixkit.co/)"
 og_image: https://i.imgur.com/KekaUZe.png
 published: true
