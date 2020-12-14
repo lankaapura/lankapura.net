@@ -4,7 +4,7 @@ header:
   overlay_image: https://i.imgur.com/KekaUZe.png
   show_overlay_excerpt: false
   overlay_filter: 0.7 
-  caption: "Photo credit: [**Mixkit**](https://mixkit.co/)"
+  caption: "Photo credit: [**Mixkit**](https://mixkit.co/free-stock-art/)"
   og_image: https://i.imgur.com/KekaUZe.png
 published: true
 ---
