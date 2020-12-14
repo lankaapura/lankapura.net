@@ -192,9 +192,7 @@ dotnet mage -new Deployment -Install true -pub "Prism Tech" -v 1.0.0.2 -AppManif
 
   DevOps URL: [https://dev.azure.com/pridevops/Prism/_build?definitionId=2&_a=summary](https://dev.azure.com/pridevops/Prism/_build?definitionId=2&_a=summary)
 
-- Website to download ClickOnce package
-
-  [https://prism-web-as-dev-ae.azurewebsites.net/](https://prism-web-as-dev-ae.azurewebsites.net/)
+- Website to download ClickOnce package - [https://prism-web-as-dev-ae.azurewebsites.net/](https://prism-web-as-dev-ae.azurewebsites.net/)
 
   ![ClickOnce download page](https://i.imgur.com/ePWCNPZ.png)
 
@@ -206,11 +204,11 @@ dotnet mage -new Deployment -Install true -pub "Prism Tech" -v 1.0.0.2 -AppManif
 
 - Installed WPF App
 
-  Deployed WPF sample app in the start menu.
+  WPF sample apps in the start menu.
 
   ![App on Start Menu](https://i.imgur.com/66DE9zR.png)
 
-  Installed WPF sample app running side by side.
+  WPF sample apps running side by side.
 
   ![Installed WPF sample app running side by side](https://i.imgur.com/8Fndv1L.png)
 
