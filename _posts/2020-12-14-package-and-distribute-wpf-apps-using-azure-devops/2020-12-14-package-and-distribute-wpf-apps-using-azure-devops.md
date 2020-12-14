@@ -26,17 +26,17 @@ If you are new to ClickOnce and Azure DevOps, it is best to go through the follo
 
 1. We will be deploying WPF ClickOnce package to Azure App Service. 
 
-    ![2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled.png](2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled.png)
+    ![Untitled.png](Untitled.png)
 
     ClickOnce download page - [https://prism-web-as-dev-ae.azurewebsites.net/](https://prism-web-as-dev-ae.azurewebsites.net/)
 
 2. We will have ClickOnce packages and installations per environment (DEV, SIT etc..)
 
-    ![2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled%201.png](2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled%201.png)
+    ![Untitled%201.png](Untitled%201.png)
 
     Deployed WPF sample app in the start menu.
 
-    ![2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled%202.png](2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled%202.png)
+    ![Untitled%202.png](Untitled%202.png)
 
     Installed WPF sample app running side by side.
 
@@ -44,11 +44,11 @@ If you are new to ClickOnce and Azure DevOps, it is best to go through the follo
 
     [https://dev.azure.com/pridevops/Prism/_build?definitionId=2&_a=summary](https://dev.azure.com/pridevops/Prism/_build?definitionId=2&_a=summary)
 
-    ![2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled%203.png](2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled%203.png)
+    ![Untitled%203.png](Untitled%203.png)
 
     Multi stage pipeline to build and deploy Razor pages app with ClickOnce package.
 
-    ![2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled%204.png](2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled%204.png)
+    ![Untitled%204.png](Untitled%204.png)
 
     Pipeline steps of Build stage and Dev Deploy stage.
 
@@ -187,7 +187,7 @@ dotnet mage -new Application -t files\PrismClient.manifest -fd files -v 1.0.0.2 
 dotnet mage -new Deployment -Install true -pub "Prism Tech" -v 1.0.0.2 -AppManifest files\PrismClient.manifest -t PrismClient.application  -CertFile .\Prism.pfx  -Password Prism@1
 ```
 
-![2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled%205.png](2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled%205.png)
+![Untitled%205.png](Untitled%205.png)
 
 ### Deploy Website
 
@@ -202,7 +202,7 @@ dotnet mage -new Deployment -Install true -pub "Prism Tech" -v 1.0.0.2 -AppManif
         deploymentMethod: 'auto'
 ```
 
-![2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled%206.png](2020-12-14-package-and-distribute-wpf-apps-using-azure-devops/Untitled%206.png)
+![Untitled%206.png](Untitled%206.png)
 
 Deployed files in Azure app service
 
