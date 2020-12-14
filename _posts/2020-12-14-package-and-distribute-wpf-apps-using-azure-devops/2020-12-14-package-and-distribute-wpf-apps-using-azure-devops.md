@@ -27,16 +27,16 @@ If you are new to ClickOnce and Azure DevOps, it is best to go through the follo
 1. We will be deploying WPF ClickOnce package to Azure App Service. 
 
     ![ClickOnce download page](https://i.imgur.com/ePWCNPZ.png)
-    **ClickOnce download page - [https://prism-web-as-dev-ae.azurewebsites.net/](https://prism-web-as-dev-ae.azurewebsites.net/)**
+    ClickOnce download page - [https://prism-web-as-dev-ae.azurewebsites.net/](https://prism-web-as-dev-ae.azurewebsites.net/)
 
 2. We will have ClickOnce packages and installations per environment (DEV, SIT etc..)
 
     ![App on Start Menu](https://i.imgur.com/66DE9zR.png)
-    **Deployed WPF sample app in the start menu.**
+    Deployed WPF sample app in the start menu.
 
     ![Installed WPF sample app running side by side](https://i.imgur.com/8Fndv1L.png)
 
-    **Installed WPF sample app running side by side.**
+    Installed WPF sample app running side by side.
 
 3. Most importantly, we are going use the Azure DevOps Pipeline to achieve both of above
 
@@ -44,11 +44,11 @@ If you are new to ClickOnce and Azure DevOps, it is best to go through the follo
 
     ![Multi stage pipeline to build and deploy Razor pages app with ClickOnce package.](https://i.imgur.com/m5vuBV5.png)
 
-    **Multi stage pipeline to build and deploy Razor pages app with ClickOnce package.**
+    Multi stage pipeline to build and deploy Razor pages app with ClickOnce package.
 
     ![Pipeline steps of Build stage and Dev Deploy stage.](https://i.imgur.com/dOVcWP6.png)
 
-    **Pipeline steps of Build stage and Dev Deploy stage.**
+    Pipeline steps of Build stage and Dev Deploy stage.
 
 ## Build & Publish
 
@@ -201,9 +201,8 @@ dotnet mage -new Deployment -Install true -pub "Prism Tech" -v 1.0.0.2 -AppManif
 ```
 
 ![Deployed files in Azure app service](https://i.imgur.com/3Gma5eY.png)
-![Deployed files in Azure app service](azure-app-service-editor.png)
-
-**Deployed files in Azure app service**
+<!-- ![Deployed files in Azure app service](azure-app-service-editor.png) -->
+Deployed files in Azure app service
 
 Full source code is available at [https://github.com/lankaapura/prism](https://github.com/lankaapura/prism)
 
