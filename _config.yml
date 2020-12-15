@@ -100,19 +100,25 @@ author:
   bio              : ".NET ‖ JavaScript ‖ DevOps"
   location         : "Colombo, Sri Lanka"
   email            : "hello@lankapura.net"
+  uri              :
+  home             : # null (default), "absolute or relative url to link to author home"
+  github           : "lankaapura"
+  linkedin         : "lankaapura" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  twitter          : "PSLankapura"
+
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "hello@lankapura.net"
+      #url: "mailto:hello@lankapura.net"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://lankapura.net"
+      #url: "https://lankapura.net"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/PSLankapura"
+      #url: "https://twitter.com/PSLankapura"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/lankaapura"
+      #url: "https://github.com/lankaapura"
 
 # Site Footer
 footer:
@@ -281,3 +287,42 @@ defaults:
       comments:  true
       share: true
       related: true
+
+prose:
+  rooturl: '_posts'
+  siteurl: 'https://www.lankapura.net/blog/'
+  relativeLinks: 'https://www.lankapura.net/links.jsonp'
+  media: 'media'
+  ignore:
+    - index.md
+    - _config.yml
+    - /_layouts
+    - /_includes
+  metadata:
+    _posts:
+      - name: "tags"
+        field:
+          element: "multiselect"
+          label: "Add Tags"
+          placeholder: "Choose Tags"
+          options:
+            - name: "JavaScript"
+              value: "javascript"
+            - name: ".NET"
+              value: "dotnet"
+            - name: "ASP.NET"
+              value: "aspdotnet"
+            - name: "ASP.NET"
+              value: "aspdotnet"
+            - name: "Angular"
+              value: "angular"
+    _posts/static:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "page"
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          value: ""
