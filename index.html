@@ -4,6 +4,7 @@
 <!-- based on https://codepen.io/marcobiedermann/pen/qJilF -->
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
   <head>
+        <title>Priyantha Lankapura</title>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400">
         <link rel="stylesheet" href="/assets/css/home.css">
@@ -70,6 +71,14 @@
                     <div class="author__urls-wrapper">
                      <ul class="social author__urls social-icons">
                   
+                        {% if author.blog %}
+                          <li>
+                            <a href="{{ author.blog }}" itemprop="sameAs">
+                              <i class="fa fa-fw fa-blog" aria-hidden="true"></i> 
+                            </a>
+                          </li>
+                        {% endif %}
+
                         {% if author.email %}
                           <li>
                             <a href="mailto:{{ author.email }}">

@@ -101,6 +101,7 @@ author:
   location         : "Colombo, Sri Lanka"
   email            : "hello@lankapura.net"
   uri              :
+  blog             : "https://lankapura.net/blog"
   home             : # null (default), "absolute or relative url to link to author home"
   github           : "lankaapura"
   linkedin         : "lankaapura" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
