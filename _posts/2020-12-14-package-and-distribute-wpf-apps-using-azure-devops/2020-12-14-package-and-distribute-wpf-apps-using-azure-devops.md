@@ -1,11 +1,11 @@
 ---
 title: Package & Distribute WPF Apps using Azure DevOps
-header: 
-  overlay_image: https://i.imgur.com/KekaUZe.png
+header:
+  overlay_image: 'https://i.imgur.com/KekaUZe.png'
   show_overlay_excerpt: false
-  overlay_filter: 0.7 
-  caption: "Photo credit: [**Mixkit**](https://mixkit.co/free-stock-art/)"
-  og_image: https://i.imgur.com/KekaUZe.png
+  overlay_filter: 0.7
+  caption: 'Photo credit: [**Mixkit**](https://mixkit.co/free-stock-art/)'
+  og_image: 'https://i.imgur.com/KekaUZe.png'
 published: true
 ---
 
@@ -37,7 +37,7 @@ If you are new to ClickOnce and Azure DevOps, it is best to go through the follo
 Publishing a WPF application and Razor page web app is pretty straightforward. The `dotnet publish` command can simply be used. Both Razor page web apps and WPF apps are published to the artifact staging directory so they can be easily uploaded to the pipeline artifacts. A WPF app is published to `wwwroot\client\files` folder so it will be accessible for users when deployed. `publishWebProjects` needs to be set to `false` when publishing a WPF app, and `zipAfterPublish` should be  `false` as we don't need the published package to be zipped.
 
 ```yaml
-ssteps:
+steps:
     - task: NuGetToolInstaller@1
 
     - task: DotNetCoreCLI@2
