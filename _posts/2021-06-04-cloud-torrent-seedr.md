@@ -1,6 +1,10 @@
 ---
-published: false
+title: Seedr - Cloud Torrent
+header: null
+og_image: null
+published: true
 ---
+
 ## Cloud Torrent - Seedr
 
 [Seedr.cc]( https://www.seedr.cc/) helps you to convert your torrent file into direct download link
