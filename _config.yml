@@ -22,7 +22,7 @@ title                    : "Pri's Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Priyantha Lankapura"
-description              : "Software Developer @Tiqri | .NET | JavaScript | DevOps."
+description              : "Software Developer @Rimes Azure | .NET | JS | DevOps"
 url                      : "https://www.lankapura.net" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "lankaapura/lankapura.net" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
